@@ -1,0 +1,1 @@
+docker run -d -p 8085:80 nextcloud
