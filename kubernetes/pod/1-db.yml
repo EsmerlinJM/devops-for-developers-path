@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: db
+  labels:
+    type: db
+    name: myapp
+    vendor: MongoLabs
+spec:
+  containers:
+  - name: db
+    image: mongo:3.3
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    command: ["mongod"]
+    args: ["--rest", "--httpinterface"]
